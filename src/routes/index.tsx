@@ -5,6 +5,7 @@ import { PokemonImage } from '../components/pokemons/pokemon-image';
 export default component$(() => {
 
   const pokemonId = useSignal(1); // primitivos, booleans, strings,
+  const showBackImage = useSignal(false); //
 
   const changePokemonId = $(( value:number ) => {
     if ((pokemonId.value + value) <= 0) return;
@@ -20,11 +21,13 @@ export default component$(() => {
 
       <span class="text-9xl">{ pokemonId }</span>
 
-      <PokemonImage id = { pokemonId.value }/>
+      <PokemonImage id = { pokemonId.value } backImage = { showBackImage.value }/>
 
       <div class="mt-2">
         <button onClick$={ () => changePokemonId(-1)  } class="btn btn-primary mr-2" >Anterior</button>
-        <button onClick$={ () => changePokemonId(+1)  } class="btn btn-primary">Siguiente</button>
+        <button onClick$={ () => changePokemonId(+1)  } class="btn btn-primary mr-2">Siguiente</button>
+
+        <button onClick$={ () => showBackImage.value = !showBackImage.value } class="btn btn-primary">Voltear</button>
       </div>
       
 
