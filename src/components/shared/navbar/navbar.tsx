@@ -4,8 +4,6 @@ import styles from "./navbar.module.css";
 
 export default component$(() => {
 
-  console.log(styles.header);
-
   return (
     <header class={styles.header}>
       <div class={["container", styles.wrapper]}>
