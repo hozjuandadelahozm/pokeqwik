@@ -33,7 +33,7 @@ export const PokemonImage = component$(({
       style={{ width: `${ size }px`, height: `${ size }px` }}>
       { !imageLoaded.value && <span>Cargando...</span> }
 
-      <img
+      <img width="96" height="96"
         src={imageUrl}
         alt="Pokemon Sprite"
         style={{ width: `${size}px` }}
